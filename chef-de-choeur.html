@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chœur Vocalys – Bourg-la-Reine / Sceaux">
+<title>Chef de chœur – Vocalys</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+ <div class="container header-inner">
+  <a class="brand" href="index.html">
+   <span class="brand-name">VOCALYS</span>
+   <span class="brand-subtitle">Chœur du conservatoire</span>
+   <span class="brand-place">Bourg-la-Reine · Sceaux</span>
+  </a>
+  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="main-nav" aria-label="Navigation principale"><a href="index.html">Accueil</a>
+<a href="chef-de-choeur.html" class="active">Chef de chœur</a>
+<a href="pianiste.html">Pianiste</a>
+<a href="concerts.html">Concerts</a>
+<a href="choristes.html">Espace choristes</a>
+<a href="liens.html">Liens</a>
+<a href="contact.html">Contact</a></nav>
+ </div>
+</header>
+<main>
+<section class="page-hero">
+ <div class="container">
+  <p class="eyebrow">Direction musicale</p>
+  <h1>Chef de chœur</h1>
+  <p class="page-intro">Découvrez la personne qui assure la direction artistique et musicale de Vocalys.</p>
+ </div>
+</section>
+
+<section class="section">
+<div class="container profile">
+<div class="profile-image placeholder">PHOTO<br>CHEF DE CHŒUR</div>
+<div><p class="eyebrow">Direction musicale</p><h2>Le chef de chœur</h2>
+<p>Cette page accueillera la présentation du chef de chœur de Vocalys, son parcours, ses activités et sa démarche musicale.</p>
+<p>Le contenu du site historique pourra être repris ici et réorganisé dans cette nouvelle mise en page.</p></div>
+</div>
+</section>
+
+</main>
+<footer>
+ <div class="container footer-inner">
+  <div><strong>VOCALYS</strong><span>Chœur d'adultes · Bourg-la-Reine / Sceaux</span></div>
+  <div class="footer-links"><a href="index.html">Accueil</a><a href="concerts.html">Concerts</a><a href="choristes.html">Espace choristes</a><a href="contact.html">Contact</a></div>
+  <div class="copyright">© 2005–2026 Vocalys</div>
+ </div>
+</footer>
+<script>
+const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open);});
+</script>
+</body></html>

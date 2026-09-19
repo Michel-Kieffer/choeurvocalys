@@ -1,28 +1,20 @@
-# Vocalys – site web
+# Vocalys – site multipages
 
-Site statique HTML/CSS destiné à être hébergé avec GitHub Pages.
+Pages créées :
+- index.html — Accueil
+- chef-de-choeur.html — Chef de chœur
+- pianiste.html — Pianiste
+- concerts.html — Concerts
+- choristes.html — Espace choristes
+- liens.html — Liens
+- contact.html — Contact
 
-## Fichiers
+La navigation est commune à toutes les pages et fonctionne sans serveur ni framework.
 
-- `index.html` : page d'accueil
-- `style.css` : mise en forme responsive
-- `images/vocalys.jpg` : photo principale à remplacer
+## GitHub Pages
+1. Créer un dépôt GitHub (par exemple `vocalys`).
+2. Copier tous les fichiers du dossier dans le dépôt.
+3. Settings → Pages → Deploy from a branch → `main` → `/ (root)`.
+4. L'adresse sera de la forme `https://VOTRE-COMPTE.github.io/vocalys/`.
 
-## Mise en ligne avec GitHub Pages
-
-1. Créer un dépôt GitHub, par exemple `vocalys`.
-2. Déposer `index.html`, `style.css` et le dossier `images`.
-3. Dans **Settings → Pages**, choisir **Deploy from a branch**.
-4. Sélectionner la branche `main` et le dossier `/ (root)`.
-5. Enregistrer.
-
-Le site sera alors accessible à une adresse de type :
-
-`https://VOTRE-COMPTE.github.io/vocalys/`
-
-## À personnaliser
-
-- remplacer `images/vocalys.jpg` par une vraie photo du chœur ;
-- remplacer les dates et lieux provisoires ;
-- remplacer `contact@example.fr` par l'adresse réelle ;
-- créer ensuite les pages détaillées du menu.
+Les textes, dates, liens et photos sont provisoires et peuvent être remplacés progressivement.

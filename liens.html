@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chœur Vocalys – Bourg-la-Reine / Sceaux">
+<title>Liens – Vocalys</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+ <div class="container header-inner">
+  <a class="brand" href="index.html">
+   <span class="brand-name">VOCALYS</span>
+   <span class="brand-subtitle">Chœur du conservatoire</span>
+   <span class="brand-place">Bourg-la-Reine · Sceaux</span>
+  </a>
+  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="main-nav" aria-label="Navigation principale"><a href="index.html">Accueil</a>
+<a href="chef-de-choeur.html">Chef de chœur</a>
+<a href="pianiste.html">Pianiste</a>
+<a href="concerts.html">Concerts</a>
+<a href="choristes.html">Espace choristes</a>
+<a href="liens.html" class="active">Liens</a>
+<a href="contact.html">Contact</a></nav>
+ </div>
+</header>
+<main>
+<section class="page-hero">
+ <div class="container">
+  <p class="eyebrow">Ressources</p>
+  <h1>Liens</h1>
+  <p class="page-intro">Les sites et ressources utiles autour de Vocalys.</p>
+ </div>
+</section>
+
+<section class="section soft">
+<div class="container"><p class="eyebrow">Ressources</p><h2>Liens utiles</h2>
+<div class="links-grid">
+<a class="link-card" href="#"><span>01</span><strong>Conservatoire</strong><small>Site du conservatoire</small></a>
+<a class="link-card" href="#"><span>02</span><strong>Bourg-la-Reine</strong><small>Informations municipales</small></a>
+<a class="link-card" href="#"><span>03</span><strong>Sceaux</strong><small>Informations municipales</small></a>
+<a class="link-card" href="#"><span>04</span><strong>Ressources musicales</strong><small>Sites et partenaires</small></a>
+</div></div>
+</section>
+
+</main>
+<footer>
+ <div class="container footer-inner">
+  <div><strong>VOCALYS</strong><span>Chœur d'adultes · Bourg-la-Reine / Sceaux</span></div>
+  <div class="footer-links"><a href="index.html">Accueil</a><a href="concerts.html">Concerts</a><a href="choristes.html">Espace choristes</a><a href="contact.html">Contact</a></div>
+  <div class="copyright">© 2005–2026 Vocalys</div>
+ </div>
+</footer>
+<script>
+const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open);});
+</script>
+</body></html>
