@@ -89,3 +89,24 @@ footer span{display:block;margin-top:7px;color:#aeb8b7;font-size:.8rem}
  .profile.reverse .profile-image{order:0}.profile-image{min-height:280px}
  .concert{grid-template-columns:90px 1fr}.links-grid{grid-template-columns:1fr}
 }
+
+/* Présentation de la pianiste avec texte autour de la photo */
+
+.pianiste-photo {
+  float: left;
+  width: 280px;
+  height: auto;
+  margin: 0 35px 20px 0;
+  border-radius: 4px;
+}
+
+.pianiste-text {
+  display: block;
+}
+
+/* Empêche la section suivante de remonter à côté de la photo */
+.profile::after {
+  content: "";
+  display: table;
+  clear: both;
+}
