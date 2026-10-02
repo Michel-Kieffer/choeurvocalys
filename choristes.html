@@ -44,12 +44,86 @@
 </script>
 
 <section class="section">
-<div class="container split">
-<div><p class="eyebrow">Accès réservé</p><h2>Les ressources du chœur</h2><p class="text">Cet espace pourra regrouper les partitions, fichiers audio, informations de répétitions, plannings et documents destinés aux choristes.</p></div>
-<div class="access"><span style="font:3.5rem 'Playfair Display',serif">♪</span><h3>Espace choristes</h3><p>Le lien ci-dessous pourra être remplacé par l'accès à l'espace privé choisi pour Vocalys.</p><a class="button button-light" href="#">Accéder à l'espace</a></div>
-</div>
+  <div class="container schedule-wrap">
+    <div class="schedule-heading">
+      <p class="eyebrow">Saison 2026–2027</p>
+      <h2>Planning des répétitions</h2>
+      <p class="text">Les répétitions ont lieu le mercredi, hors vacances scolaires, de 20 h 15 à 22 h 15.</p>
+    </div>
+    <div class="schedule-note"><strong>À retenir</strong><span>Les dates et horaires signalés par un astérisque sont à confirmer.</span></div>
+
+    <div class="schedule-group">
+      <h3>Septembre — décembre 2026</h3>
+      <div class="schedule-table-scroll">
+        <table class="schedule-table">
+          <thead><tr><th scope="col">Date</th><th scope="col">Répétition / événement</th></tr></thead>
+          <tbody>
+            <tr><td>Mercredi 16 septembre</td><td>Reprise des répétitions à l’auditorium du conservatoire.</td></tr>
+            <tr><td>Mercredi 9 décembre&nbsp;*</td><td>Répétition avec les instrumentistes à 19 h 40.</td></tr>
+            <tr><td>Lundi 14 décembre&nbsp;*</td><td><strong>Pré-générale à l’église à 20 h.</strong><br>Rendez-vous à 19 h 30 en salle Péguy, à gauche de l’église.</td></tr>
+            <tr><td>Mercredi 16 décembre&nbsp;*</td><td><strong>Générale et raccord à l’église à partir de 20 h.</strong><br>Rendez-vous à 19 h 30 en salle Péguy, à gauche de l’église.</td></tr>
+            <tr class="event-row"><td>Jeudi 17 décembre</td><td><strong>Concert de Noël à l’église</strong><br>Raccord à 19 h 15 (salle Péguy puis église), entrée des spectateurs à 20 h, début du concert à 20 h 30.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="schedule-group">
+      <h3>Juin 2027</h3>
+      <div class="schedule-table-scroll">
+        <table class="schedule-table">
+          <thead><tr><th scope="col">Date</th><th scope="col">Répétition / événement</th></tr></thead>
+          <tbody>
+            <tr><td>Mercredi 2 juin</td><td>Générale du concert.</td></tr>
+            <tr class="event-row"><td>Jeudi 3 juin</td><td><strong>Concert à l’auditorium du conservatoire de Bourg-la-Reine à 20 h 30.</strong></td></tr>
+            <tr class="event-row"><td>Mercredi 9 juin</td><td><strong>Concert à l’auditorium du conservatoire de Bourg-la-Reine à 20 h 30.</strong></td></tr>
+            <tr><td>Mercredi 23 juin&nbsp;*</td><td><strong>Fête de fin d’année</strong> à l’ancienne mairie de Sceaux, de 19 h à 22 h.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="last_update">Dernière mise à jour : 13 septembre 2026.</p>
+  </div>
 </section>
-<section class="section soft"><div class="container"><p class="eyebrow">À définir</p><h2>Organisation de l'espace</h2><div class="cards"><div class="card"><h3>Partitions</h3><p>Partitions par œuvre ou par pupitre.</p></div><div class="card"><h3>Fichiers audio</h3><p>Fichiers d'apprentissage pour les répétitions.</p></div><div class="card"><h3>Informations</h3><p>Planning, annonces et documents pratiques.</p></div></div></div></section>
+
+<style>
+  .schedule-wrap { max-width: 960px; }
+  .schedule-heading { max-width: 720px; margin-bottom: 2rem; }
+  .schedule-heading h2 { margin-bottom: .75rem; }
+  .schedule-note {
+    display: flex; flex-wrap: wrap; gap: .45rem .8rem; align-items: baseline;
+    padding: 1rem 1.2rem; margin: 0 0 2rem;
+    border-left: 3px solid var(--accent, #6d9e9b);
+    background: var(--paper, #fbfaf7); border-radius: 0 8px 8px 0;
+  }
+  .schedule-note strong { white-space: nowrap; }
+  .schedule-group { margin: 2.4rem 0; }
+  .schedule-group h3 {
+    font-size: 1.2rem; margin: 0 0 1rem; padding-bottom: .65rem;
+    border-bottom: 1px solid rgba(128,128,128,.3);
+  }
+  .schedule-table-scroll { width: 100%; overflow-x: auto; border-radius: 10px; }
+  .schedule-table { width: 100%; border-collapse: collapse; text-align: left; }
+  .schedule-table th {
+    padding: .9rem 1rem; font-size: .82rem; letter-spacing: .04em;
+    text-transform: uppercase; background: #263a39; color: #fff;
+  }
+  .schedule-table th:first-child { width: 30%; }
+  .schedule-table td {
+    padding: 1rem; vertical-align: top; border-bottom: 1px solid rgba(128,128,128,.2);
+  }
+  .schedule-table tbody tr:nth-child(even) { background: rgba(128,128,128,.055); }
+  .schedule-table tbody tr:hover { background: rgba(109,158,155,.11); }
+  .schedule-table td:first-child { font-weight: 600; }
+  .schedule-table .event-row td:last-child strong { color: var(--accent-dark, #315b5c); }
+  .last_update { margin-top: 2rem; font-size: .85rem; opacity: .7; text-align: right; }
+  @media (max-width: 600px) {
+    .schedule-table th, .schedule-table td { padding: .75rem .65rem; }
+    .schedule-table th:first-child { width: auto; }
+    .schedule-table td:first-child { min-width: 115px; }
+    .schedule-heading h2 { font-size: 1.7rem; }
+  }
+</style>
 
 </main>
 <footer>
