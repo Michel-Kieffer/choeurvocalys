@@ -25,6 +25,7 @@
 <a href="contact.html">Contact</a></nav>
  </div>
 </header>
+
 <main>
 <section class="page-hero">
  <div class="container">
@@ -33,26 +34,97 @@
   <p class="page-intro">Découvrez la personne qui assure la direction artistique et musicale de Vocalys.</p>
  </div>
 </section>
+<main>
+ 
+  <section class="section soft">
+    <div class="container profile">
 
-<section class="section">
-<div class="container profile">
-<div class="profile-image placeholder">PHOTO<br>CHEF DE CHŒUR</div>
-<div><p class="eyebrow">Direction musicale</p><h2>Le chef de chœur</h2>
-<p>Cette page accueillera la présentation du chef de chœur de Vocalys, son parcours, ses activités et sa démarche musicale.</p>
-<p>Le contenu du site historique pourra être repris ici et réorganisé dans cette nouvelle mise en page.</p></div>
-</div>
-</section>
+      <img src="images/emmanuele-small.jpg"
+           alt="Emmanuèle Dubost, chef de choeur"
+           class="pianiste-photo">
+
+      <div class="pianiste-text">
+
+        <p class="eyebrow">Direction musicale</p>
+        <h2>Emmanuèle Dubost</h2>
+
+        <p>
+          Chef de chœur, elle se forme au Centre d’Etudes Polyphoniques de Paris, 
+          principalement auprès d'Homero Ribeiro de Magalhès. Elle dirige les Choeurs 
+          des Grandes Ecoles de 1991 à 1995. Elle a été boursière de la Fondation France 
+          Télécom pour la musique vocale. Reçue au diplôme d'état, puis au concours de 
+          professeur de direction d'ensembles vocaux, elle est actuellement professeur de 
+          chant choral titulaire au Conservatoire à rayonnement départemental de 
+          Bourg-la-Reine-Sceaux (92).
+        </p>
+
+        <p>
+          En 1995, elle crée Chœur en Scène pour explorer les possibilités offertes par 
+          la rencontre de l'art choral avec d'autres disciplines artistiques. Elle participe 
+          à l’écriture et à la conception des spectacles et fait partie de la troupe sur scène. 
+          Elle a créé une quinzaine de spectacles, souvent en collaboration avec des compositeurs 
+          comme Thierry Machuel, Jean-Christophe Marti, Alexandros Markeas.
+        </p>
+
+        <p>
+          En 2003, elle dirige la création de Et les petites filles dansent... du compositeur Jacques 
+          Barathon en Poitou-Charentes. En 2005 elle dirige le choeur d'enfants pour la création de Cuore 
+         Opéra de Caroline Gautier et Carlo Carcano, et suit la tournée de 18 représentations à Poitiers et 
+         en Ile de France, dont à l'amphithéâtre de l'Opéra Bastille. En 2007 et 2008 elle dirige 
+         Bienvenue aux paradis de Michel Musseau à l'Auditorium St Germain (MPAA) qui sera repris les 
+         18 et 19 avril 2013. En 2012, elle dirige le choeur pour la création de Pion prend tour en D9 de 
+         Bruno Giner, créé à la MPAA à Paris sous la direction du chef Philippe Nahon, repris le 14 juin 2013 
+         à Massy (Paul B).
+        </p>
+
+        <p>
+          En juin 2012 elle a dirigé à l'amphithéâtre de l'opéra Bastille quatre représentations de l'opéra de 
+         Fabien Waksman Le Rameau d'or, livret de Florent Siaux, dans le cadre du programme 10 mois d'école et d'opéra. 
+         Elle a dirigé une nouvelle production le 22 juin 2013 dans le même cadre.
+        </p>
+
+        <p>
+          Emmanuèle Dubost est également musicologue de formation (premier prix du CNSM de Paris) et initialement 
+          clarinettiste, elle a étudié également le chant et l'orgue.
+        </p>
+
+      </div>
+    </div>
+  </section>
 
 </main>
+
 <footer>
- <div class="container footer-inner">
-  <div><strong>VOCALYS</strong><span>Chœur d'adultes · Bourg-la-Reine / Sceaux</span></div>
-  <div class="footer-links"><a href="index.html">Accueil</a><a href="concerts.html">Concerts</a><a href="choristes.html">Espace choristes</a><a href="contact.html">Contact</a></div>
-  <div class="copyright">© 2005–2026 Vocalys</div>
- </div>
+  <div class="container footer-inner">
+
+    <div>
+      <strong>VOCALYS</strong>
+      <span>Chœur d'adultes · Bourg-la-Reine / Sceaux</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html">Accueil</a>
+      <a href="concerts.html">Concerts</a>
+      <a href="choristes.html">Espace choristes</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="copyright">
+      © 2005–2026 Vocalys
+    </div>
+
+  </div>
 </footer>
+
 <script>
-const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');
-toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open);});
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.main-nav');
+
+toggle.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', open);
+});
 </script>
-</body></html>
+
+</body>
+</html>
