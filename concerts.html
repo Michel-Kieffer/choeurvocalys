@@ -6,6 +6,24 @@
 <meta name="description" content="Chœur Vocalys – Bourg-la-Reine / Sceaux">
 <title>Concerts – Vocalys</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.concerts-intro{max-width:820px}
+.concerts-note{margin:1.5rem 0 2rem;padding:1rem 1.25rem;border-left:3px solid var(--accent,#6d9e9b);background:rgba(128,128,128,.08);border-radius:0 8px 8px 0}
+.archive-tools{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.5rem 0 2rem}
+.archive-tools a{display:inline-block;padding:.55rem .85rem;border:1px solid rgba(128,128,128,.35);border-radius:999px;text-decoration:none;font-size:.9rem}
+.archive-tools a:hover{background:rgba(109,158,155,.15)}
+.archive-year{margin:2.6rem 0}
+.archive-year h2{font-size:1.45rem;margin:0 0 1.1rem;padding-bottom:.65rem;border-bottom:1px solid rgba(128,128,128,.3)}
+.concert-list{display:grid;grid-template-columns:1fr;gap:.8rem}
+.concert{display:grid;grid-template-columns:115px 1fr;gap:1.1rem;padding:1.15rem 1.25rem;border:1px solid rgba(128,128,128,.22);border-radius:12px;background:rgba(128,128,128,.035)}
+.concert-date{font-size:.88rem;font-weight:700;letter-spacing:.035em;text-transform:uppercase;color:var(--accent-dark,#315b5c)}
+.concert h3{font-size:1.06rem;margin:0 0 .35rem}
+.concert p{margin:.25rem 0;line-height:1.6}
+.concert-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
+.concert-links a{font-size:.84rem;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px}
+.archive-footnote{font-size:.9rem;opacity:.8;margin-top:2rem}
+@media(max-width:600px){.concert{grid-template-columns:1fr;gap:.35rem;padding:1rem}.concert-date{font-size:.8rem}.archive-year h2{font-size:1.25rem}}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -26,7 +44,7 @@
  </div>
 </header>
 <main>
-<!--
+<!-- Partie commentée
 <section class="page-hero">
  <div class="container">
   <p class="eyebrow">Agenda de Vocalys</p>
@@ -39,13 +57,123 @@
 <div class="container">
 <p class="eyebrow">Agenda</p><h2>Prochains concerts</h2>
 <div class="concert-list">
-<article class="concert"><div class="concert-date"><span class="day">17</span><span class="month">DEC.</span><span class="year">2026</span></div><div><p class="label">Prochain concert</p><h3>Programme à venir</h3><p>Eglise de Bourg-la-Reine · 20h00</p><p>Informations pratiques, programme et réservation à compléter.</p></div></article>
-<article class="concert"><div class="concert-date"><span class="day">3</span><span class="month">JUIN</span><span class="year">2027</span></div><div><p class="label">À venir</p><h3>Prochain rendez-vous</h3><p>Les informations seront publiées prochainement.</p></div></article>
+ <article class="concert">
+  <div class="concert-date">
+   <span class="day">17</span><span class="month">DEC.</span><span class="year">2026</span></div>
+   <div>
+    <p class="label">Prochain concert</p>
+    <h3>Programme à venir</h3>
+    <p>Eglise de Bourg-la-Reine · 20h00</p>
+    <p>Informations pratiques, programme et réservation à compléter.</p>
+   </div>
+ </article>
+ <article class="concert">
+  <div class="concert-date"><span class="day">3</span><span class="month">JUIN</span><span class="year">2027</span></div>
+  <div>
+   <p class="label">À venir</p>
+   <h3>Prochain rendez-vous</h3>
+   <p>Les informations seront publiées prochainement.</p>
+  </div>
+ </article>
 </div>
 </div>
 </section>
-<section class="section"><div class="container"><p class="eyebrow">Archives</p><h2>Concerts passés</h2><p class="text">Cette section pourra reprendre l'historique des concerts du site actuel, avec programmes, lieux et éventuellement photographies.</p></div></section>
 
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Archives</p>
+    <h2>Concerts passés</h2>
+    <p class="text">Cette section pourra reprendre l'historique des concerts du site actuel, avec programmes, lieux et éventuellement photographies.</p>
+  </div>
+</section>
+
+<div class="container">
+ <div class="concerts-note"><strong>Direction musicale.</strong> Sauf indication contraire dans les archives, les concerts ont été dirigés ou préparés par Emmanuèle Dubost. Certains projets ont été réalisés avec l’Orchestre du CRD, sous la direction notamment de Matthieu Ané, Jean-Yves Altenburger, Alexandre Bloch ou Jean-Luc Tourret.</div>
+ <nav class="archive-tools" aria-label="Accès rapide aux périodes">
+  <a href="#2020">2020–2025</a><a href="#2010">2010–2019</a><a href="#2000">2000–2009</a><a href="#1990">1994–1999</a>
+ </nav>
+
+ <section class="archive-year" id="2020"><h2>2020–2025</h2><div class="concert-list">
+  <article class="concert"><div class="concert-date">Décembre 2025</div><div><h3>Concert de Noël</h3><p>Extraits du <em>Stabat Mater</em> de Dvořák, chants de Noël slovaques — <em>Búvaj, dieťa krásne</em> — et <em>La Nuit de Noël</em> de Jean-Baptiste de Bousset.</p></div></article>
+  <article class="concert"><div class="concert-date">Juin 2025</div><div><h3>Programme espagnol</h3><p>Concert du 18 juin avec Anya Potapov, soliste, et piano à quatre mains avec Rébecca Trialoup, qui a réalisé des arrangements. Au programme : Tomas Luis de Victoria, Juan del Encina, Granados, Moszkowski, Turina, Antonio Vives, Mel Bonis, Vincent d’Indy, Bizet et Manuel de Falla.</p></div></article>
+  <article class="concert"><div class="concert-date">Avril 2025</div><div><h3>Berlioz — <em>La Damnation de Faust</em></h3><p>Extraits, avec répétition publique le 3 avril et concert le 5 avril à l’auditorium du CRD.</p></div></article>
+  <article class="concert"><div class="concert-date">Mars 2025</div><div><h3>Haendel — <em>Dixit Dominus</em></h3><p>Projet réunissant Eonia et Vocalys, le 30 mars à la cathédrale de Chartres.</p></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2024</div><div><h3>Concert de Noël</h3><p>Extraits de la <em>Messa di Gloria</em> de Puccini.</p></div></article>
+  <article class="concert"><div class="concert-date">Juin 2024</div><div><h3>Musique romantique allemande</h3><p>Concerts à l’auditorium du CRD et, le 19 juin, à l’église réformée des Batignolles. Anya Potapov en soliste ; l’un des concerts était donné au profit de la Croix-Rouge pour l’Ukraine.</p></div></article>
+  <article class="concert"><div class="concert-date">Mars 2024</div><div><h3>Haendel — <em>Dixit Dominus</em></h3><p>Avec Eonia et Vocalys : église de Sceaux le 23 mars et église de Châtillon le 24 mars.</p></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2023</div><div><h3>Concert de Noël — Schumann</h3><p><em>An die Sterne</em>, op. 141 ; <em>Gute Nacht</em>, op. 59 n° 4 ; <em>Zigeunerleben</em>, op. 29 n° 3.</p></div></article>
+  <article class="concert"><div class="concert-date">Avril–juin 2023</div><div><h3>Projet avec Anne Paceo</h3><p>Aux Gémeaux à Sceaux le 20 avril, puis au festival de jazz de La Défense le 27 juin.</p></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2022</div><div><h3>Concert de Noël — Mozart</h3><p>Messe du Couronnement en do majeur, KV 317.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/data/divers/202212%20concert%20de%20noel.pdf">Programme (PDF)</a></div></div></article>
+  <article class="concert"><div class="concert-date">Juin 2022</div><div><h3>Mélodie française</h3><p>Concerts les 15 juin à l’auditorium du CRD et 19 juin à l’église réformée des Batignolles, au profit de la Croix-Rouge pour l’Ukraine. Anya Potapov, soliste ; œuvres de Debussy, Gounod, Offenbach et autres compositeurs.</p></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2021</div><div><h3>Concert de Noël — Mendelssohn</h3><p>Psaume 42, op. 42 de Felix Mendelssohn.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20211208%20Affiche.pdf">Affiche (PDF)</a><a href="http://choeurvocalys.free.fr/images/20211208%20Programme.pdf">Programme (PDF)</a></div></div></article>
+  <article class="concert"><div class="concert-date">Juillet 2021</div><div><h3><em>Ypokosmos</em> — A. Markeas</h3><p>À l’Opéra de Massy, avec l’ensemble TM+ et l’Estudiantina d’Argenteuil, direction Marc Desmons.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/data/20210704%20Ypokosmos%20(programme).pdf">Programme (PDF)</a><a href="https://www.tmplus.org/">Ensemble TM+</a><a href="https://estudiantinadargenteuil.fr/">Estudiantina d’Argenteuil</a></div></div></article>
+ </div></section>
+
+ <section class="archive-year" id="2010"><h2>2010–2019</h2><div class="concert-list">
+  <article class="concert"><div class="concert-date">Mai–juin 2019</div><div><h3>Musiques russes pour piano et chœur</h3><p>Concerts le 22 mai à l’auditorium du CRD et le 3 juin à l’église de la Madeleine.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/data/2019%20Musiques%20russes%20pour%20piano%20et%20choeur.pdf">Programme</a><a href="http://choeurvocalys.free.fr/data/20190522%20Musique%20russe%20-%20Affiche.pdf">Affiche du 22 mai</a><a href="http://choeurvocalys.free.fr/data/20190603%20Musique%20russe%20-%20FlyerMadeleine.pdf">Flyer de la Madeleine</a></div></div></article>
+  <article class="concert"><div class="concert-date">Janvier 2019</div><div><h3>Vivaldi — <em>Gloria</em> RV 589</h3><p>Concert à l’église Saint-Laurent, à Paris.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/201901_AfficheConcert.pdf">Affiche (PDF)</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2018</div><div><h3>Concert de Noël — Monteverdi et Vivaldi</h3><p><em>Confitebor tibi Domine</em> de Monteverdi et <em>Gloria</em> RV 589 de Vivaldi.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/201812_AfficheNoel.pdf">Affiche</a><a href="http://choeurvocalys.free.fr/images/201812%20prog.pdf">Programme</a></div></div></article>
+  <article class="concert"><div class="concert-date">Juin 2018</div><div><h3>Soirée « Paris secret »</h3><p>À l’hôtel de Béhague, Paris 7e, pour le lancement du hors-série du Figaro. <em>Cantique de Jean Racine</em> et <em>Requiem</em> de Gabriel Fauré, avec Anya Potapov au piano.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/data/20180613_Leaflet_Paris%20Secret.pdf">Programme</a><a href="https://players.brightcove.net/610043537001/4k4QmRz5g_default/index.html?videoId=5797258354001&amp;t=1h11m40s&amp;autoplay" target="_blank" rel="noopener">Vidéo</a></div></div></article>
+  <article class="concert"><div class="concert-date">Mars 2018</div><div><h3>Fauré — <em>Pavane</em>, <em>Cantique de Jean Racine</em> et <em>Requiem</em></h3><p>Avec l’Orchestre symphonique du Plateau de Saclay, direction Emmanuel Calef : École Polytechnique le 15 mars et église de la Madeleine le 19 mars.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20180315_aff.png">Affiche du 15 mars</a><a href="http://choeurvocalys.free.fr/images/20180319_aff.jpg">Affiche du 19 mars</a><a href="https://ops.polytechnique.org/">Orchestre symphonique du Plateau de Saclay</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2017</div><div><h3>Concert de Noël</h3><p><em>Magnificat</em> de Durante et extraits de la <em>Messe en si mineur</em> BWV 232 de J.-S. Bach.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/AFFICHE_CONCERT_NOEL_2017.jpg">Affiche</a><a href="http://choeurvocalys.free.fr/data/201712prog.pdf">Programme</a></div></div></article>
+  <article class="concert"><div class="concert-date">Juin 2017</div><div><h3>Purcell — <em>King Arthur</em></h3><p>Aux Gémeaux, dans un projet dirigé par Benoît Haller avec d’autres chorales de la communauté d’agglomération.</p><div class="concert-links"><a href="http://benoithaller.com/">Benoît Haller</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2016</div><div><h3>Concert de Noël — Mozart</h3><p><em>Laudate Dominum</em> (Vesperae solennes de Confessore, KV 339) et extraits du <em>Requiem</em> KV 626.</p></div></article>
+  <article class="concert"><div class="concert-date">Juin 2016</div><div><h3>Autour du tango</h3><p>Avec Anya Potapov au piano et la participation de Philippe Berthe au bandonéon.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/data/20160615_Autour_du_tango.pdf">Programme (PDF)</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2015</div><div><h3>Concert de Noël — Mendelssohn</h3><p><em>Warum toben die Heiden</em> (Drei Psalmen, op. 78) et <em>Lauda Sion</em>, op. 73.</p></div></article>
+  <article class="concert"><div class="concert-date">Juin 2015</div><div><h3>Concert de fin d’année</h3><p>Avec Anya Potapov au piano : Donizetti, Verdi et extraits du <em>Lauda Sion</em> de Mendelssohn.</p></div></article>
+  <article class="concert"><div class="concert-date">Mars 2015</div><div><h3>Bach — <em>Passion selon saint Jean</em></h3><p>Aux Gémeaux à Sceaux, avec la Chapelle Rhénane dirigée par Benoît Haller. Les chorals étaient assurés par Vocalys et Cantabilis du Plessis-Robinson.</p><div class="concert-links"><a href="http://www.chapelle-rhenane.com/">La Chapelle Rhénane</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2014</div><div><h3>Concert de Noël — Schubert</h3><p><em>Missa solemnis</em> D. 950 : Kyrie, Credo et Agnus Dei.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/data/20141211%20prog.pdf">Programme (PDF)</a></div></div></article>
+  <article class="concert"><div class="concert-date">Juin 2014</div><div><h3>Concert-rencontre</h3><p>« C’était il y a cent ans » par le Jeune Chœur Costeley et Théa Chœur ; « Musiques chorales » par Vocalys.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/data/20140608%20prog.pdf">Programme (PDF)</a><a href="http://www.choeurenscene.fr/ateliers2/thea-choeur/presentation-thea-choeur">Théa Chœur</a></div></div></article>
+  <article class="concert"><div class="concert-date">Janvier–février 2014</div><div><h3>Autour du Credo — Bach</h3><p>Extrait de la <em>Messe en si mineur</em>, avec Cantabilis et le Jeune Chœur Costeley. Concerts au Plessis-Robinson le 18 janvier et aux Gémeaux à Sceaux le 8 février.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/data/20140118%20prog.pdf">Programme du 18 janvier</a><a href="http://choeurvocalys.free.fr/data/20140208%20prog.pdf">Programme du 8 février</a><a href="http://www.chapelle-rhenane.com/">La Chapelle Rhénane</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2013</div><div><h3>Concert de Noël</h3><p>Poulenc, <em>Hodie Christus</em> ; Brahms, <em>Schicksalslied</em>, op. 54 ; Verdi, <em>Stabat Mater</em> des <em>Quattro pezzi sacri</em>.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20131205-aff.jpg">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Juin 2013</div><div><h3>Les grands chœurs sacrés italiens</h3><p>Œuvres de Monteverdi, Puccini, Rossini et Verdi, avec l’octuor à vent Monsieur Croche et Compagnie. Concerts au CRD le 12 juin et à la cathédrale de Troyes le 15 juin.</p><div class="concert-links"><a href="http://www.le-figuier.fr/musique_de_chambre_octuor_a_vent.html">Monsieur Croche et Compagnie</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2012</div><div><h3>Concert de Noël</h3><p>Monteverdi, <em>Cantate Domino</em> et <em>Adoramus te Christe</em> ; Vivaldi, <em>Magnificat</em>.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/concerts_2012_12.htm">Extraits du concert</a></div></div></article>
+  <article class="concert"><div class="concert-date">Juin 2012</div><div><h3>« Dialogues » pour chœur et piano</h3><p>Direction Aurélie Reybier, piano Anya Potapov.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/2012-06-dialogues.jpg">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Avril 2012</div><div><h3>Concert romantique</h3><p>Avec les ensembles Ars Musica Mansionum et Neskatxena.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/amm-affichette-avril-2012-hd.jpg">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2011</div><div><h3>Concert de Noël — Mozart</h3><p><em>Messe en ut mineur</em> KV 427, direction Aurélie Reybier.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/2011-12-noel.jpg">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Octobre 2011</div><div><h3><em>Alice au pays des merveilles</em></h3><p>Participation à la création d’Ibrahim Maalouf avec Oxmo Puccino, dans le cadre du Festival de l’Île-de-France, « D’un monde à l’autre ».</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/data/divers/2011_alice_maalouf.jpg">Visuel du projet</a></div></div></article>
+  <article class="concert"><div class="concert-date">Mars–avril 2011</div><div><h3>Concerts-échange</h3><p>Avec le chœur Vocalitas de Châtenay-Malabry et le chœur Costeley du CRD : Bourg-la-Reine le 23 mars, Châtenay-Malabry le 7 avril. Chansons a cappella ou avec piano, par Élisabeth van Straaten.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/concerts_2011_03_extraits.htm">Extraits du concert</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2010</div><div><h3>Concert de Noël — Schumann</h3><p>Avec Vocalitas de Châtenay-Malabry : <em>Adventlied</em>, op. 71 et <em>Nachtlied</em>, op. 108.</p></div></article>
+  <article class="concert"><div class="concert-date">Juin 2010</div><div><h3>Rossini — <em>Petite messe solennelle</em></h3></div></article>
+ </div></section>
+
+ <section class="archive-year" id="2000"><h2>2000–2009</h2><div class="concert-list">
+  <article class="concert"><div class="concert-date">Décembre 2009</div><div><h3>Concert de Noël — Mendelssohn</h3><p>Avec Vocalitas : <em>Herbstlied</em>, op. 48 n° 6, <em>Laudate pueri</em>, op. 39 n° 2 et Psaume 42, op. 42.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20091210-aff.png">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Avril 2009</div><div><h3>18e Semaine musicale — « La musique et la mer »</h3><p>Brahms : <em>Begräbnisgesang</em>, op. 13 et <em>Gesang der Parzen</em>, op. 89.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20090402-aff.png">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2008</div><div><h3>Concert de Noël — Honegger</h3><p><em>Le Roi David</em>, direction Catherine Amrofel.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20081211-aff.png">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Juin 2008</div><div><h3>Concert a cappella aux Gémeaux</h3><p>Direction Catherine Amrofel. Œuvres de Kodály, Ligeti, Bárdos Lajos, Márkus Miklós et Daróci Bárdos Tamás.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20080606-aff.png">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2007</div><div><h3>Concert de Noël</h3><p>Avec le Chœur de Compostelle et le Chœur de Vanves : Liszt, Ligeti et <em>La Légende de sainte Élisabeth</em>.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20071220-aff.png">Affiche</a><a href="http://choeurcompostelle.free.fr/">Chœur de Compostelle</a></div></div></article>
+  <article class="concert"><div class="concert-date">Mars 2007</div><div><h3>Thierry Escaich — <em>Le Dernier Évangile</em></h3><p>Avec le compositeur à l’orgue.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20070324-aff.png">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2006</div><div><h3>Concert de Noël — Berlioz</h3><p><em>Te Deum</em>, avec le Chœur de Compostelle.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/concerts_2006_12.htm">Enregistrements MP3</a><a href="http://choeurvocalys.free.fr/images/200612xx-aff.png">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Mars 2006</div><div><h3>Mozart — <em>Requiem</em> KV 626</h3><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20060330-aff.png">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2005</div><div><h3>Concert de Noël — Brahms</h3><p>Avec le Chœur de Compostelle : <em>Schicksalslied</em>, op. 54 et <em>Nänie</em>, op. 82.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20051201-aff.png">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Avril 2005</div><div><h3>14e Semaine musicale — « La musique et la mer »</h3><p>Œuvres a cappella de Pierre de L’Estocart et Guillaume Costeley.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20050401-aff.png">Affiche</a><a href="http://choeurvocalys.free.fr/images/20050401-prog1.png">Programme, partie 1</a><a href="http://choeurvocalys.free.fr/images/20050401-prog2.png">Programme, partie 2</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2004</div><div><h3>Concert de Noël — C. P. E. Bach</h3><p><em>Magnificat</em>, Wq 215, avec le Chœur de Compostelle.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20041202-aff.png">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Juin 2004</div><div><h3>Pour la liberté</h3><p>Musique d’André Dubost, poésie de Philippe Soupault.</p></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2003</div><div><h3>Concert de Noël — Puccini</h3><p><em>Messa di Gloria</em>.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/2003-12-noel.jpg">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Juin 2003</div><div><h3>Fauré — <em>Requiem</em></h3></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2002</div><div><h3>Concert de Noël</h3><p>Schubert, <em>Stabat Mater</em> D. 175 ; Beethoven, <em>Fantaisie chorale</em>, op. 80. Concerts à Saint-Gilles le 12 et à la salle Gaveau le 17.</p><div class="concert-links"><a href="http://choeurvocalys.free.fr/images/20021212-aff.png">Affiche</a></div></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2001</div><div><h3>Mendelssohn — <em>Lauda Sion</em></h3><p>Concert de Noël, op. 73.</p></div></article>
+  <article class="concert"><div class="concert-date">Décembre 2000</div><div><h3>Franck — <em>Les Béatitudes</em></h3><p>Avec la chorale André Sala de Saint-Rémy-lès-Chevreuse.</p></div></article>
+ </div></section>
+
+ <section class="archive-year" id="1990"><h2>1994–1999</h2><div class="concert-list">
+  <article class="concert"><div class="concert-date">Décembre 1999</div><div><h3>Haydn — <em>La Création</em></h3><p>Concert de Noël.</p></div></article>
+  <article class="concert"><div class="concert-date">Juin 1999</div><div><h3>Fête de la musique</h3><p>Deux chants slovaques de Béla Bartók.</p></div></article>
+  <article class="concert"><div class="concert-date">Mai 1999</div><div><h3><em>Llibre Vermell</em> de l’abbaye de Montserrat</h3></div></article>
+  <article class="concert"><div class="concert-date">Décembre 1998</div><div><h3>Rossini — <em>Stabat Mater</em></h3><p>Concert de Noël.</p></div></article>
+  <article class="concert"><div class="concert-date">Mai 1998</div><div><h3>Rencontres de musique ancienne de Bourg-la-Reine</h3><p>Cantate <em>Komm, du süsse Todesstunde…</em>, BWV 161 de J.-S. Bach, avec un ensemble d’élèves du CRD, direction Gilles Harlé.</p></div></article>
+  <article class="concert"><div class="concert-date">Décembre 1997</div><div><h3>Mozart — Messe du Couronnement</h3><p>KV 317, concert de Noël.</p></div></article>
+  <article class="concert"><div class="concert-date">Mars 1997</div><div><h3>Semaine musicale — « L’Europe romantique »</h3><p>Neuf créations de variations sur le thème de la <em>Truite</em> de Schubert.</p></div></article>
+  <article class="concert"><div class="concert-date">Décembre 1996</div><div><h3>Saint-Saëns — Psaume XVIII</h3><p>Concert de Noël.</p></div></article>
+  <article class="concert"><div class="concert-date">Décembre 1995</div><div><h3>Berlioz — <em>L’Enfance du Christ</em></h3><p>Avec la chorale André Sala de Saint-Rémy-lès-Chevreuse.</p></div></article>
+  <article class="concert"><div class="concert-date">Février 1995</div><div><h3>Bizet — <em>Carmen</em> (extraits)</h3></div></article>
+  <article class="concert"><div class="concert-date">Décembre 1994</div><div><h3>Bach — <em>Oratorio de Noël</em></h3><p>BWV 248, avec la chorale André Sala de Saint-Rémy-lès-Chevreuse.</p></div></article>
+ </div></section>
+ <p class="archive-footnote">Les liens d’archives pointent vers l’ancien site de Vocalys. Certains documents anciens peuvent ne plus être disponibles. Les informations ci-dessus reprennent les archives historiques ; les détails ont été légèrement normalisés pour la lecture.</p>
+</div>
+</section>
+ 
 </main>
 <footer>
  <div class="container footer-inner">
