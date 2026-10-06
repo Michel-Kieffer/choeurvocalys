@@ -7,6 +7,47 @@
 <title>Espace choristes – Vocalys</title>
 <link rel="stylesheet" href="style.css">
 </head>
+<style>
+   .concert-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
+   .concert-links a{font-size:.99rem;text-decoration:none;border-bottom:1px solid     currentColor;padding-bottom:1px}
+
+  .schedule-wrap { max-width: 960px; }
+  .schedule-heading { max-width: 720px; margin-bottom: 2rem; }
+  .schedule-heading h2 { margin-bottom: .75rem; }
+  .schedule-note {
+    display: flex; flex-wrap: wrap; gap: .45rem .8rem; align-items: baseline;
+    padding: 1rem 1.2rem; margin: 0 0 2rem;
+    border-left: 3px solid var(--accent, #6d9e9b);
+    background: var(--paper, #fbfaf7); border-radius: 0 8px 8px 0;
+  }
+  .schedule-note strong { white-space: nowrap; }
+  .schedule-group { margin: 2.4rem 0; }
+  .schedule-group h3 {
+    font-size: 1.2rem; margin: 0 0 1rem; padding-bottom: .65rem;
+    border-bottom: 1px solid rgba(128,128,128,.3);
+  }
+  .schedule-table-scroll { width: 100%; overflow-x: auto; border-radius: 10px; }
+  .schedule-table { width: 100%; border-collapse: collapse; text-align: left; }
+  .schedule-table th {
+    padding: .9rem 1rem; font-size: .82rem; letter-spacing: .04em;
+    text-transform: uppercase; background: #263a39; color: #fff;
+  }
+  .schedule-table th:first-child { width: 30%; }
+  .schedule-table td {
+    padding: 1rem; vertical-align: top; border-bottom: 1px solid rgba(128,128,128,.2);
+  }
+  .schedule-table tbody tr:nth-child(even) { background: rgba(128,128,128,.055); }
+  .schedule-table tbody tr:hover { background: rgba(109,158,155,.11); }
+  .schedule-table td:first-child { font-weight: 600; }
+  .schedule-table .event-row td:last-child strong { color: var(--accent-dark, #315b5c); }
+  .last_update { margin-top: 2rem; font-size: .85rem; opacity: .7; text-align: right; }
+  @media (max-width: 600px) {
+    .schedule-table th, .schedule-table td { padding: .75rem .65rem; }
+    .schedule-table th:first-child { width: auto; }
+    .schedule-table td:first-child { min-width: 115px; }
+    .schedule-heading h2 { font-size: 1.7rem; }
+  }
+</style>
 <body>
 <header class="site-header">
  <div class="container header-inner">
@@ -26,7 +67,6 @@
  </div>
 </header>
 <main>
-<!-- Protection par mot de passe
 <script>
     const motDePasse = prompt("Mot de passe :");
 
@@ -35,7 +75,6 @@
             "<h1>Accès refusé</h1>";
     }
 </script>
--->
 <section class="section">
   <div class="container schedule-wrap">
     <div class="schedule-heading">
@@ -79,44 +118,16 @@
   </div>
 </section>
 
-<style>
-  .schedule-wrap { max-width: 960px; }
-  .schedule-heading { max-width: 720px; margin-bottom: 2rem; }
-  .schedule-heading h2 { margin-bottom: .75rem; }
-  .schedule-note {
-    display: flex; flex-wrap: wrap; gap: .45rem .8rem; align-items: baseline;
-    padding: 1rem 1.2rem; margin: 0 0 2rem;
-    border-left: 3px solid var(--accent, #6d9e9b);
-    background: var(--paper, #fbfaf7); border-radius: 0 8px 8px 0;
-  }
-  .schedule-note strong { white-space: nowrap; }
-  .schedule-group { margin: 2.4rem 0; }
-  .schedule-group h3 {
-    font-size: 1.2rem; margin: 0 0 1rem; padding-bottom: .65rem;
-    border-bottom: 1px solid rgba(128,128,128,.3);
-  }
-  .schedule-table-scroll { width: 100%; overflow-x: auto; border-radius: 10px; }
-  .schedule-table { width: 100%; border-collapse: collapse; text-align: left; }
-  .schedule-table th {
-    padding: .9rem 1rem; font-size: .82rem; letter-spacing: .04em;
-    text-transform: uppercase; background: #263a39; color: #fff;
-  }
-  .schedule-table th:first-child { width: 30%; }
-  .schedule-table td {
-    padding: 1rem; vertical-align: top; border-bottom: 1px solid rgba(128,128,128,.2);
-  }
-  .schedule-table tbody tr:nth-child(even) { background: rgba(128,128,128,.055); }
-  .schedule-table tbody tr:hover { background: rgba(109,158,155,.11); }
-  .schedule-table td:first-child { font-weight: 600; }
-  .schedule-table .event-row td:last-child strong { color: var(--accent-dark, #315b5c); }
-  .last_update { margin-top: 2rem; font-size: .85rem; opacity: .7; text-align: right; }
-  @media (max-width: 600px) {
-    .schedule-table th, .schedule-table td { padding: .75rem .65rem; }
-    .schedule-table th:first-child { width: auto; }
-    .schedule-table td:first-child { min-width: 115px; }
-    .schedule-heading h2 { font-size: 1.7rem; }
-  }
-</style>
+<section class="section">
+  <div class="container schedule-wrap">
+    <div class="schedule-heading">
+      <h2>Trombinoscope du choeur Vocalys</h2>
+	<div class="concert-links">
+      <p class="text">Retrouvez l'ensemble des <a href="trombi.html">pupitres du choeur</a></p>
+    </div>
+    </div>
+ </div>
+</section>
 
 </main>
 <footer>
