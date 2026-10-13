@@ -11,7 +11,7 @@
    .concert-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
    .concert-links a{font-size:.99rem;text-decoration:none;border-bottom:1px solid     currentColor;padding-bottom:1px}
 
-  .schedule-wrap { max-width: 960px; }
+  .schedule-wrap { max-width: 1000px; }
   .schedule-heading { max-width: 720px; margin-bottom: 2rem; }
   .schedule-heading h2 { margin-bottom: .75rem; }
   .schedule-note {
@@ -47,6 +47,28 @@
     .schedule-table td:first-child { min-width: 115px; }
     .schedule-heading h2 { font-size: 1.7rem; }
   }
+  
+  .links-page { max-width: 1000px; }
+  .links-intro { max-width: 700px; margin: .5rem 0 1.5rem; }
+  .links-page .links-grid { margin-top: 1.2rem; }
+  .links-page .link-card {
+    min-height: 145px; display: flex; flex-direction: column;
+    gap: .65rem; padding: 1.4rem; text-decoration: none;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .links-page .link-card > span {
+    font-size: .78rem; letter-spacing: .12em; opacity: .65;
+  }
+  .links-page .link-card strong { line-height: 1.35; }
+  .links-page .link-card small { font-size: .92rem; line-height: 1.5; }
+  .links-page .link-card:hover { transform: translateY(-3px); }
+  .links-subheading { margin-top: 3rem; }
+  .links-disclaimer { margin-top: 2.5rem; font-size: .85rem; opacity: .7; }
+  @media (max-width: 600px) {
+    .links-page .link-card { min-height: 0; padding: 1.1rem; }
+    .links-subheading { margin-top: 2.3rem; }
+  }
+
 </style>
 <body>
 <header class="site-header">
@@ -124,9 +146,25 @@
 </section>
 
 <section class="section">
+  <div class="container links-page">
+    <h2>Espace choristes</h2>
+    <p class="links-intro">Quelques ressources en lien avec le programme en cours.</p>
+
+    <div class="links-grid">
+      <a class="link-card" href="trombi.html" rel="noopener noreferrer">
+        <span>01</span><strong>Trombinoscope</strong><small>Les membres du choeur Vocalys</small>
+      </a>
+      <a class="link-card" href="ressources.html" rel="noopener noreferrer">
+        <span>02</span><strong>Ressources</strong><small>Quelques ressources pour le programme en cours</small>
+      </a>
+    </div>
+	</div>
+</section>
+<!--
+<section class="section">
   <div class="container schedule-wrap">
     <div class="schedule-heading">
-      <h2>Trombinoscope du choeur Vocalys</h2>
+      <h2>Trombinoscope</h2>
 	<div class="concert-links">
       <p class="text">Retrouvez l'ensemble des <a href="trombi.html">pupitres du choeur</a></p>
     </div>
@@ -134,6 +172,17 @@
  </div>
 </section>
 
+<section class="section">
+  <div class="container schedule-wrap">
+    <div class="schedule-heading">
+      <h2>Ressources pour les choristes</h2>
+	<div class="concert-links">
+      <p class="text">Retrouvez quelques <a href="ressources.html">ressources</a> en lien avec le programme en cours</p>
+    </div>
+    </div>
+ </div>
+</section>
+-->
 </main>
 <footer>
  <div class="container footer-inner">

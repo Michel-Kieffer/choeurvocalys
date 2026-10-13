@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chœur Vocalys – Bourg-la-Reine / Sceaux">
+<title>Liens – Vocalys</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+ <div class="container header-inner">
+  <a class="brand" href="index.html">
+   <span class="brand-name">VOCALYS</span>
+   <span class="brand-subtitle">Chœur du conservatoire</span>
+   <span class="brand-place">Bourg-la-Reine · Sceaux</span>
+  </a>
+  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="main-nav" aria-label="Navigation principale"><a href="index.html">Accueil</a>
+<a href="chef-de-choeur.html">Chef de chœur</a>
+<a href="pianiste.html">Pianiste</a>
+<a href="concerts.html">Concerts</a>
+<a href="choristes.html" class="active">Espace choristes</a>
+<a href="liens.html">Liens</a>
+<a href="contact.html">Contact</a></nav>
+ </div>
+</header>
+<main>
+<script>
+    const motDePasse = prompt("Mot de passe :");
+
+    if (motDePasse !== "Vocalys2026") {
+        document.body.innerHTML =
+            "<h1>Accès refusé</h1>";
+    }
+</script>
+ 
+<section class="section soft">
+  <div class="container links-page">
+    <p class="eyebrow">Ressources</p>
+    <h2>Ressources choristes</h2>
+    <p class="links-intro">Quelques ressources en lien avec le programme en cours.</p>
+
+    <div class="links-grid">
+      <a class="link-card" href="http://lesacbs.free.fr/" target="_blank" rel="noopener noreferrer">
+        <span>01</span><strong>ACBS</strong><small>Les Amis du Conservatoire de Bourg-la-Reine / Sceaux</small>
+      </a>
+      <a class="link-card" href="http://orchestreacsf.fr/" target="_blank" rel="noopener noreferrer">
+        <span>02</span><strong>La Chevillaise</strong><small>Orchestre Philharmonique de Chevilly-Larue</small>
+      </a>
+      <a class="link-card" href="http://choeurenscene.fr/" target="_blank" rel="noopener noreferrer">
+        <span>03</span><strong>Chœur en Scène</strong><small>Compagnie dirigée par Emmanuèle Dubost</small>
+      </a>
+    </div>
+
+    <h2 class="links-subheading">Ressources musicales</h2>
+    <p class="links-intro">Outils et bibliothèques de partitions pour préparer et travailler le répertoire.</p>
+    <div class="links-grid">
+      <a class="link-card" href="http://www.hamienet.com/midi2mp3" target="_blank" rel="noopener noreferrer">
+        <span>04</span><strong>Hamienet</strong><small>Conversion en ligne de fichiers MIDI en MP3 / WAV</small>
+      </a>
+      <a class="link-card" href="https://www.cpdl.org/" target="_blank" rel="noopener noreferrer">
+        <span>05</span><strong>Choral Public Domain Library (CPDL)</strong><small>Bibliothèque de partitions chorales libres</small>
+      </a>
+      <a class="link-card" href="https://imslp.org/wiki/" target="_blank" rel="noopener noreferrer">
+        <span>06</span><strong>Petrucci Music Library (IMSLP)</strong><small>Bibliothèque de partitions musicales</small>
+      </a>
+      <a class="link-card" href="http://www.learnchoralmusic.co.uk/" target="_blank" rel="noopener noreferrer">
+        <span>07</span><strong>John’s Midi File Choral Music Site</strong><small>Fichiers MIDI pour la musique chorale</small>
+      </a>
+    </div>
+
+    <h2 class="links-subheading">Lire les fichiers MIDI</h2>
+    <p class="links-intro">Deux logiciels mentionnés dans les ressources d’origine pour lire des fichiers MIDI.</p>
+    <div class="links-grid">
+      <a class="link-card" href="https://www.vanbasco.com/" target="_blank" rel="noopener noreferrer">
+        <span>08</span><strong>vanBasco Karaoke Player</strong><small>Lecteur de fichiers MIDI</small>
+      </a>
+      <a class="link-card" href="https://www.anvilstudio.com/" target="_blank" rel="noopener noreferrer">
+        <span>09</span><strong>Anvil Studio</strong><small>Logiciel de lecture et de travail MIDI</small>
+      </a>
+    </div>
+    <p class="links-disclaimer">Les liens renvoient vers des sites externes à Vocalys.</p>
+  </div>
+</section>
+
+<style>
+  .links-page { max-width: 1100px; }
+  .links-intro { max-width: 700px; margin: .5rem 0 1.5rem; }
+  .links-page .links-grid { margin-top: 1.2rem; }
+  .links-page .link-card {
+    min-height: 145px; display: flex; flex-direction: column;
+    gap: .65rem; padding: 1.4rem; text-decoration: none;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .links-page .link-card > span {
+    font-size: .78rem; letter-spacing: .12em; opacity: .65;
+  }
+  .links-page .link-card strong { line-height: 1.35; }
+  .links-page .link-card small { font-size: .92rem; line-height: 1.5; }
+  .links-page .link-card:hover { transform: translateY(-3px); }
+  .links-subheading { margin-top: 3rem; }
+  .links-disclaimer { margin-top: 2.5rem; font-size: .85rem; opacity: .7; }
+  @media (max-width: 600px) {
+    .links-page .link-card { min-height: 0; padding: 1.1rem; }
+    .links-subheading { margin-top: 2.3rem; }
+  }
+</style>
+
+</main>
+<footer>
+ <div class="container footer-inner">
+  <div><strong>VOCALYS</strong><span>Chœur d'adultes · Bourg-la-Reine / Sceaux</span></div>
+  <div class="footer-links"><a href="index.html">Accueil</a><a href="concerts.html">Concerts</a><a href="choristes.html">Espace choristes</a><a href="contact.html">Contact</a>      <a href="mentions.html">Mentions légales</a>
+</div>
+  <div class="copyright">© 2005–2026 Vocalys</div>
+ </div>
+</footer>
+<script>
+const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');
+toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open);});
+</script>
+</body></html>

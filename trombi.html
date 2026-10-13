@@ -1,17 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chœur Vocalys – Bourg-la-Reine / Sceaux">
+<title>Espace choristes – Vocalys</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<style>
+   .concert-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
+   .concert-links a{font-size:.99rem;text-decoration:none;border-bottom:1px solid     currentColor;padding-bottom:1px}
 
-    <meta name="description"
-          content="Les sopranos du chœur Vocalys – Bourg-la-Reine / Sceaux">
-
-    <title>Sopranos – Vocalys</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <style>
+  .schedule-wrap { max-width: 960px; }
+  .schedule-heading { max-width: 720px; margin-bottom: 2rem; }
+  .schedule-heading h2 { margin-bottom: .75rem; }
+  .schedule-note {
+    display: flex; flex-wrap: wrap; gap: .45rem .8rem; align-items: baseline;
+    padding: 1rem 1.2rem; margin: 0 0 2rem;
+    border-left: 3px solid var(--accent, #6d9e9b);
+    background: var(--paper, #fbfaf7); border-radius: 0 8px 8px 0;
+  }
+  .schedule-note strong { white-space: nowrap; }
+  .schedule-group { margin: 2.4rem 0; }
+  .schedule-group h3 {
+    font-size: 1.2rem; margin: 0 0 1rem; padding-bottom: .65rem;
+    border-bottom: 1px solid rgba(128,128,128,.3);
+  }
+  .schedule-table-scroll { width: 100%; overflow-x: auto; border-radius: 10px; }
+  .schedule-table { width: 100%; border-collapse: collapse; text-align: left; }
+  .schedule-table th {
+    padding: .9rem 1rem; font-size: .82rem; letter-spacing: .04em;
+    text-transform: uppercase; background: #263a39; color: #fff;
+  }
+  .schedule-table th:first-child { width: 30%; }
+  .schedule-table td {
+    padding: 1rem; vertical-align: top; border-bottom: 1px solid rgba(128,128,128,.2);
+  }
+  .schedule-table tbody tr:nth-child(even) { background: rgba(128,128,128,.055); }
+  .schedule-table tbody tr:hover { background: rgba(109,158,155,.11); }
+  .schedule-table td:first-child { font-weight: 600; }
+  .schedule-table .event-row td:last-child strong { color: var(--accent-dark, #315b5c); }
+  .last_update { margin-top: 2rem; font-size: .85rem; opacity: .7; text-align: right; }
+  @media (max-width: 600px) {
+    .schedule-table th, .schedule-table td { padding: .75rem .65rem; }
+    .schedule-table th:first-child { width: auto; }
+    .schedule-table td:first-child { min-width: 115px; }
+    .schedule-heading h2 { font-size: 1.7rem; }
+  }
         /* =========================================================
            PAGE DES CHORISTES
            ========================================================= */
@@ -75,8 +110,6 @@
         .choriste-photo {
             width: 120px;
             height: 150px;
-
-            margin-bottom: 18px;
 
             border: 1px solid rgba(255,255,255,0.25);
             border-radius: 6px;
@@ -175,7 +208,6 @@
             .choriste-photo {
                 width: 95px;
                 height: 120px;
-                margin-bottom: 14px;
             }
 
             .choriste-name {
@@ -193,50 +225,37 @@
                 height: 140px;
             }
         }
-    </style>
-</head>
 
+</style>
+<body>
+<main>
+<script>
+    const motDePasse = prompt("Mot de passe :");
+
+    if (motDePasse !== "Vocalys2026") {
+        document.body.innerHTML =
+            "<h1>Accès refusé</h1>";
+    }
+</script>
 
 <body>
 
 <header class="site-header">
-
-    <div class="header-inner">
-
-        <a class="brand" href="index.html">
-            <div class="brand-name">VOCALYS</div>
-            <div class="brand-subtitle">Chœur du conservatoire</div>
-            <div class="brand-place">Bourg-la-Reine · Sceaux</div>
-        </a>
-
-        <button class="menu-toggle"
-                aria-label="Ouvrir le menu"
-                aria-expanded="false">
-            ☰
-        </button>
-
-        <nav class="main-nav">
-
-            <a href="index.html">Accueil</a>
-
-            <a href="chef-de-choeur.html">Chef de chœur</a>
-
-            <a href="pianiste.html">Pianiste</a>
-
-            <a href="concerts.html">Concerts</a>
-
-            <a href="choristes.html" class="active">
-                Espace choristes
-            </a>
-
-            <a href="liens.html">Liens</a>
-
-            <a href="contact.html">Contact</a>
-
-        </nav>
-
-    </div>
-
+ <div class="container header-inner">
+  <a class="brand" href="index.html">
+   <span class="brand-name">VOCALYS</span>
+   <span class="brand-subtitle">Chœur du conservatoire</span>
+   <span class="brand-place">Bourg-la-Reine · Sceaux</span>
+  </a>
+  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="main-nav" aria-label="Navigation principale"><a href="index.html">Accueil</a>
+<a href="chef-de-choeur.html">Chef de chœur</a>
+<a href="pianiste.html">Pianiste</a>
+<a href="concerts.html">Concerts</a>
+<a href="choristes.html" class="active">Espace choristes</a>
+<a href="liens.html">Liens</a>
+<a href="contact.html">Contact</a></nav>
+ </div>
 </header>
 
 <script>
@@ -280,13 +299,8 @@
 
         <!-- Amon Pauline -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Amon
+          <div class="choriste-photo">Photo</div
+            <p class="choriste-name">Amon
                 <span class="choriste-firstname">Pauline</span>
             </p>
 
@@ -295,13 +309,8 @@
 
         <!-- Aubertin Patricia -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Aubertin
+          <div class="choriste-photo"><img src="trombinoscope/0aubertin.jpg" class="choriste-photo"></div>
+            <p class="choriste-name">Aubertin
                 <span class="choriste-firstname">Patricia</span>
             </p>
 
@@ -310,13 +319,8 @@
 
         <!-- Benatre Brigitte -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Benatre
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Benatre
                 <span class="choriste-firstname">Brigitte</span>
             </p>
 
@@ -325,13 +329,8 @@
 
         <!-- Blez Monique -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Blez
+          <div class="choriste-photo"><img src="trombinoscope/0blez.jpg" class="choriste-photo"></div>
+            <p class="choriste-name">Blez
                 <span class="choriste-firstname">Monique</span>
             </p>
 
@@ -340,13 +339,8 @@
 
         <!-- Charrière Élisabeth -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Charrière
+          <div class="choriste-photo"><img src="trombinoscope/0charriere.jpg" class="choriste-photo"></div>
+            <p class="choriste-name">Charrière
                 <span class="choriste-firstname">Élisabeth</span>
             </p>
 
@@ -355,13 +349,8 @@
 
         <!-- Coskun Beyza -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Coskun
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Coskun
                 <span class="choriste-firstname">Beyza</span>
             </p>
 
@@ -370,13 +359,8 @@
 
         <!-- Covès Corinne -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Covès
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Covès
                 <span class="choriste-firstname">Corinne</span>
             </p>
 
@@ -385,13 +369,8 @@
 
         <!-- Dancourt Clara-Pauline -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Dancourt
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Dancourt
                 <span class="choriste-firstname">Clara-Pauline</span>
             </p>
 
@@ -400,13 +379,8 @@
 
         <!-- Dupieux Anne -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Dupieux
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Dupieux
                 <span class="choriste-firstname">Anne</span>
             </p>
 
@@ -415,13 +389,8 @@
 
         <!-- Egnell Henriette -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Egnell
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Egnell
                 <span class="choriste-firstname">Henriette</span>
             </p>
 
@@ -430,13 +399,8 @@
 
         <!-- Eon Agnès -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Eon
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Eon
                 <span class="choriste-firstname">Agnès</span>
             </p>
 
@@ -445,13 +409,8 @@
 
         <!-- Favier Cécile -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Favier
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Favier
                 <span class="choriste-firstname">Cécile</span>
             </p>
 
@@ -460,13 +419,8 @@
 
         <!-- Fournier Estelle -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Fournier
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Fournier
                 <span class="choriste-firstname">Estelle</span>
             </p>
 
@@ -475,13 +429,8 @@
 
         <!-- Fuchs Anne -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Fuchs
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Fuchs
                 <span class="choriste-firstname">Anne</span>
             </p>
 
@@ -490,13 +439,8 @@
 
         <!-- Govaere Claire -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Govaere
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Govaere
                 <span class="choriste-firstname">Claire</span>
             </p>
 
@@ -505,13 +449,8 @@
 
         <!-- Grobon Isabelle -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Grobon
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Grobon
                 <span class="choriste-firstname">Isabelle</span>
             </p>
 
@@ -520,13 +459,8 @@
 
         <!-- Martinelli Colombine -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Martinelli
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Martinelli
                 <span class="choriste-firstname">Colombine</span>
             </p>
 
@@ -535,13 +469,8 @@
 
         <!-- Maruiani Agnès -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Maruiani
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Maruiani
                 <span class="choriste-firstname">Agnès</span>
             </p>
 
@@ -550,13 +479,8 @@
 
         <!-- Papiernik Juliette -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Papiernik
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Papiernik
                 <span class="choriste-firstname">Juliette</span>
             </p>
 
@@ -565,13 +489,8 @@
 
         <!-- Phan Florence -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Phan
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Phan
                 <span class="choriste-firstname">Florence</span>
             </p>
 
@@ -580,13 +499,8 @@
 
         <!-- Pomian-Berthe Mélanie -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Pomian-Berthe
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Pomian-Berthe
                 <span class="choriste-firstname">Mélanie</span>
             </p>
 
@@ -595,13 +509,8 @@
 
         <!-- Rabaud Baptiste -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Rabaud
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Rabaud
                 <span class="choriste-firstname">Baptiste</span>
             </p>
 
@@ -610,13 +519,8 @@
 
         <!-- Reverdy Mathilde -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Reverdy
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Reverdy
                 <span class="choriste-firstname">Mathilde</span>
             </p>
 
@@ -625,13 +529,8 @@
 
         <!-- Schoette Carole -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Schoette
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Schoette
                 <span class="choriste-firstname">Carole</span>
             </p>
 
@@ -640,13 +539,8 @@
 
         <!-- Sowa Maya -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Sowa
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Sowa
                 <span class="choriste-firstname">Maya</span>
             </p>
 
@@ -655,13 +549,8 @@
 
         <!-- Starynkévitch Corinne -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Starynkévitch
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Starynkévitch
                 <span class="choriste-firstname">Corinne</span>
             </p>
 
@@ -670,43 +559,26 @@
 
         <!-- Trialoup Rébecca -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Trialoup
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Trialoup
                 <span class="choriste-firstname">Rébecca</span>
             </p>
-
         </article>
 
 
         <!-- Vignes Sylvie -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Vignes
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Vignes
                 <span class="choriste-firstname">Sylvie</span>
             </p>
-
         </article>
 
 
         <!-- Vivicorsi Florence -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Vivicorsi
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Vivicorsi
                 <span class="choriste-firstname">Florence</span>
             </p>
 
@@ -715,13 +587,8 @@
 
         <!-- Volz Yaling -->
         <article class="choriste-card">
-
-            <div class="choriste-photo">
-                <span>Photo</span>
-            </div>
-
-            <p class="choriste-name">
-                Volz
+          <div class="choriste-photo">Photo</div>
+            <p class="choriste-name">Volz
                 <span class="choriste-firstname">Yaling</span>
             </p>
 
