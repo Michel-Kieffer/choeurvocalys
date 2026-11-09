@@ -1,1003 +1,301 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Chœur Vocalys – Bourg-la-Reine / Sceaux">
-<title>Espace choristes – Vocalys</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Espace choristes du Chœur Vocalys – Bourg-la-Reine / Sceaux">
+    <title>Espace choristes – Vocalys</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-   .concert-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
-   .concert-links a{font-size:.99rem;text-decoration:none;border-bottom:1px solid     currentColor;padding-bottom:1px}
-
-  .schedule-wrap { max-width: 960px; }
-  .schedule-heading { max-width: 720px; margin-bottom: 2rem; }
-  .schedule-heading h2 { margin-bottom: .75rem; }
-  .schedule-note {
-    display: flex; flex-wrap: wrap; gap: .45rem .8rem; align-items: baseline;
-    padding: 1rem 1.2rem; margin: 0 0 2rem;
-    border-left: 3px solid var(--accent, #6d9e9b);
-    background: var(--paper, #fbfaf7); border-radius: 0 8px 8px 0;
-  }
-  .schedule-note strong { white-space: nowrap; }
-  .schedule-group { margin: 2.4rem 0; }
-  .schedule-group h3 {
-    font-size: 1.2rem; margin: 0 0 1rem; padding-bottom: .65rem;
-    border-bottom: 1px solid rgba(128,128,128,.3);
-  }
-  .schedule-table-scroll { width: 100%; overflow-x: auto; border-radius: 10px; }
-  .schedule-table { width: 100%; border-collapse: collapse; text-align: left; }
-  .schedule-table th {
-    padding: .9rem 1rem; font-size: .82rem; letter-spacing: .04em;
-    text-transform: uppercase; background: #263a39; color: #fff;
-  }
-  .schedule-table th:first-child { width: 30%; }
-  .schedule-table td {
-    padding: 1rem; vertical-align: top; border-bottom: 1px solid rgba(128,128,128,.2);
-  }
-  .schedule-table tbody tr:nth-child(even) { background: rgba(128,128,128,.055); }
-  .schedule-table tbody tr:hover { background: rgba(109,158,155,.11); }
-  .schedule-table td:first-child { font-weight: 600; }
-  .schedule-table .event-row td:last-child strong { color: var(--accent-dark, #315b5c); }
-  .last_update { margin-top: 2rem; font-size: .85rem; opacity: .7; text-align: right; }
-  @media (max-width: 600px) {
-    .schedule-table th, .schedule-table td { padding: .75rem .65rem; }
-    .schedule-table th:first-child { width: auto; }
-    .schedule-table td:first-child { min-width: 115px; }
-    .schedule-heading h2 { font-size: 1.7rem; }
-  }
-        /* =========================================================
-           PAGE DES CHORISTES
-           ========================================================= */
-
-        .choristes-page {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px 30px 70px;
-        }
-
-        .choristes-intro {
-            max-width: 800px;
-            margin: 0 auto 40px;
-            text-align: center;
-        }
-
-        .choristes-intro h1 {
-            margin-bottom: 12px;
-        }
-
-        .choristes-intro p {
-            margin: 0;
-            opacity: 0.8;
-        }
-
-        .pupitre-title {
-            text-align: center;
-            margin: 35px 0 25px;
-        }
-
-        .choristes-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .choriste-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 22px 18px 25px;
-
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 12px;
-
-            background: rgba(255,255,255,0.035);
-
-            transition:
-                transform 0.2s ease,
-                background 0.2s ease,
-                border-color 0.2s ease;
-        }
-
-        .choriste-card:hover {
-            transform: translateY(-3px);
-            background: rgba(255,255,255,0.06);
-            border-color: rgba(255,255,255,0.22);
-        }
-
-        /* Emplacement de la photo d'identité */
-        .choriste-photo {
-            width: 120px;
-            height: 150px;
-
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: 6px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255,255,255,0.08),
-                    rgba(255,255,255,0.025)
-                );
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            color: rgba(255,255,255,0.35);
-            font-size: 12px;
-            text-align: center;
-        }
-
-        .choriste-photo span {
-            padding: 10px;
-        }
-
-        .choriste-name {
-            margin: 0;
-            font-size: 18px;
-            font-weight: 600;
-            text-align: center;
-        }
-
-        .choriste-firstname {
-            display: block;
-            margin-top: 4px;
-            font-weight: 400;
-            opacity: 0.8;
-        }
-
-/* =========================================================
-   Navigation entre les pupitres
-   ========================================================= */
-
-.pupitres-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin: 30px 0 45px;
-}
-
-.pupitres-nav a {
-    display: inline-block;
-    padding: 9px 18px;
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 30px;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.2s ease;
-}
-
-.pupitres-nav a:hover {
-    background: rgba(255,255,255,0.10);
-    transform: translateY(-2px);
-}
-
-
-
-        /* =========================================================
-           ADAPTATION TABLETTE
-           ========================================================= */
-
-        @media (max-width: 900px) {
-            .choristes-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        /* =========================================================
-           ADAPTATION MOBILE
-           ========================================================= */
-
-        @media (max-width: 650px) {
-            .choristes-page {
-                padding: 35px 18px 50px;
-            }
-
-            .choristes-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .choriste-card {
-                padding: 16px 10px 20px;
-            }
-
-            .choriste-photo {
-                width: 95px;
-                height: 120px;
-            }
-
-            .choriste-name {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .choristes-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .choriste-photo {
-                width: 110px;
-                height: 140px;
-            }
-        }
-
-</style>
-<body>
-<main>
-<script>
-    const motDePasse = prompt("Mot de passe :");
-
-    if (motDePasse !== "Vocalys2026") {
-        document.body.innerHTML =
-            "<h1>Accès refusé</h1>";
-    }
-</script>
 
 <body>
 
 <header class="site-header">
- <div class="container header-inner">
-  <a class="brand" href="index.html">
-   <span class="brand-name">VOCALYS</span>
-   <span class="brand-subtitle">Chœur du conservatoire</span>
-   <span class="brand-place">Bourg-la-Reine · Sceaux</span>
-  </a>
-  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  <nav class="main-nav" aria-label="Navigation principale"><a href="index.html">Accueil</a>
-<a href="chef-de-choeur.html">Chef de chœur</a>
-<a href="pianiste.html">Pianiste</a>
-<a href="concerts.html">Concerts</a>
-<a href="choristes.html" class="active">Espace choristes</a>
-<a href="liens.html">Liens</a>
-<a href="contact.html">Contact</a></nav>
- </div>
+    <div class="container header-inner">
+
+        <a class="brand" href="index.html">
+            <span class="brand-name">VOCALYS</span>
+            <span class="brand-subtitle">Chœur du conservatoire</span>
+            <span class="brand-place">Bourg-la-Reine · Sceaux</span>
+        </a>
+
+        <button class="menu-toggle"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Navigation principale">
+            <a href="index.html">Accueil</a>
+            <a href="chef-de-choeur.html">Chef de chœur</a>
+            <a href="pianiste.html">Pianiste</a>
+            <a href="concerts.html">Concerts</a>
+            <a href="choristes.html" class="active">Espace choristes</a>
+            <a href="liens.html">Liens</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </div>
 </header>
 
-<script>
-    const motDePasse = prompt("Mot de passe :");
-
-    if (motDePasse !== "Vocalys2026") {
-        document.body.innerHTML =
-            "<h1>Accès refusé</h1>";
-    }
-</script>
 <main class="choristes-page">
 
     <div class="choristes-intro">
-
         <h1>Les choristes</h1>
-
     </div>
 
-    <!-- =====================================================
-         MENU DES PUPITRES
-         ===================================================== -->
-
-    <div class="pupitres-nav">
-
+    <nav class="pupitres-nav" aria-label="Accès aux pupitres">
         <a href="#sopranos">Sopranos</a>
-
         <a href="#altos">Altos</a>
-
         <a href="#tenors">Ténors</a>
-
         <a href="#basses">Basses</a>
+    </nav>
 
-    </div>
-
-
-    <h2 class="pupitre-title" id="sopranos">Sopranos</h2>
-
-
-    <div class="choristes-grid">
-
-
-        <!-- Amon Pauline -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div
-            <p class="choriste-name">Amon
-                <span class="choriste-firstname">Pauline</span>
-            </p>
-
-        </article>
-
-
-        <!-- Aubertin Patricia -->
-        <article class="choriste-card">
-          <div class="choriste-photo"><img src="trombinoscope/0aubertin.jpg" class="choriste-photo"></div>
-            <p class="choriste-name">Aubertin
-                <span class="choriste-firstname">Patricia</span>
-            </p>
-
-        </article>
-
-
-        <!-- Benatre Brigitte -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Benatre
-                <span class="choriste-firstname">Brigitte</span>
-            </p>
-
-        </article>
-
-
-        <!-- Blez Monique -->
-        <article class="choriste-card">
-          <div class="choriste-photo"><img src="trombinoscope/0blez.jpg" class="choriste-photo"></div>
-            <p class="choriste-name">Blez
-                <span class="choriste-firstname">Monique</span>
-            </p>
-
-        </article>
-
-
-        <!-- Charrière Élisabeth -->
-        <article class="choriste-card">
-          <div class="choriste-photo"><img src="trombinoscope/0charriere.jpg" class="choriste-photo"></div>
-            <p class="choriste-name">Charrière
-                <span class="choriste-firstname">Élisabeth</span>
-            </p>
-
-        </article>
-
-
-        <!-- Coskun Beyza -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Coskun
-                <span class="choriste-firstname">Beyza</span>
-            </p>
-
-        </article>
-
-
-        <!-- Covès Corinne -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Covès
-                <span class="choriste-firstname">Corinne</span>
-            </p>
-
-        </article>
-
-
-        <!-- Dancourt Clara-Pauline -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Dancourt
-                <span class="choriste-firstname">Clara-Pauline</span>
-            </p>
-
-        </article>
-
-
-        <!-- Dupieux Anne -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Dupieux
-                <span class="choriste-firstname">Anne</span>
-            </p>
-
-        </article>
-
-
-        <!-- Egnell Henriette -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Egnell
-                <span class="choriste-firstname">Henriette</span>
-            </p>
-
-        </article>
-
-
-        <!-- Eon Agnès -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Eon
-                <span class="choriste-firstname">Agnès</span>
-            </p>
-
-        </article>
-
-
-        <!-- Favier Cécile -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Favier
-                <span class="choriste-firstname">Cécile</span>
-            </p>
-
-        </article>
-
-
-        <!-- Fournier Estelle -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Fournier
-                <span class="choriste-firstname">Estelle</span>
-            </p>
-
-        </article>
-
-
-        <!-- Fuchs Anne -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Fuchs
-                <span class="choriste-firstname">Anne</span>
-            </p>
-
-        </article>
-
-
-        <!-- Govaere Claire -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Govaere
-                <span class="choriste-firstname">Claire</span>
-            </p>
-
-        </article>
-
-
-        <!-- Grobon Isabelle -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Grobon
-                <span class="choriste-firstname">Isabelle</span>
-            </p>
-
-        </article>
-
-
-        <!-- Martinelli Colombine -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Martinelli
-                <span class="choriste-firstname">Colombine</span>
-            </p>
-
-        </article>
-
-
-        <!-- Maruiani Agnès -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Maruiani
-                <span class="choriste-firstname">Agnès</span>
-            </p>
-
-        </article>
-
-
-        <!-- Papiernik Juliette -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Papiernik
-                <span class="choriste-firstname">Juliette</span>
-            </p>
-
-        </article>
-
-
-        <!-- Phan Florence -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Phan
-                <span class="choriste-firstname">Florence</span>
-            </p>
-
-        </article>
-
-
-        <!-- Pomian-Berthe Mélanie -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Pomian-Berthe
-                <span class="choriste-firstname">Mélanie</span>
-            </p>
-
-        </article>
-
-
-        <!-- Rabaud Baptiste -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Rabaud
-                <span class="choriste-firstname">Baptiste</span>
-            </p>
-
-        </article>
-
-
-        <!-- Reverdy Mathilde -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Reverdy
-                <span class="choriste-firstname">Mathilde</span>
-            </p>
-
-        </article>
-
-
-        <!-- Schoette Carole -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Schoette
-                <span class="choriste-firstname">Carole</span>
-            </p>
-
-        </article>
-
-
-        <!-- Sowa Maya -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Sowa
-                <span class="choriste-firstname">Maya</span>
-            </p>
-
-        </article>
-
-
-        <!-- Starynkévitch Corinne -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Starynkévitch
-                <span class="choriste-firstname">Corinne</span>
-            </p>
-
-        </article>
-
-
-        <!-- Trialoup Rébecca -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Trialoup
-                <span class="choriste-firstname">Rébecca</span>
-            </p>
-        </article>
-
-
-        <!-- Vignes Sylvie -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Vignes
-                <span class="choriste-firstname">Sylvie</span>
-            </p>
-        </article>
-
-
-        <!-- Vivicorsi Florence -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Vivicorsi
-                <span class="choriste-firstname">Florence</span>
-            </p>
-
-        </article>
-
-
-        <!-- Volz Yaling -->
-        <article class="choriste-card">
-          <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Volz
-                <span class="choriste-firstname">Yaling</span>
-            </p>
-
-        </article>
-
-
-    </div>
-
-<!-- ALTOS -->
-    <h2 class="pupitre-title" id="altos">Altos</h2>
-
-    <div class="choristes-grid">
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Aberdam</p>
-            <p class="choriste-firstname">Marie-Suzanne</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Berdah</p>
-            <p class="choriste-firstname">Maryse</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Blanc</p>
-            <p class="choriste-firstname">Virginie</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Brochard</p>
-            <p class="choriste-firstname">Pascale</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Brussier</p>
-            <p class="choriste-firstname">Magali</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Elissalt</p>
-            <p class="choriste-firstname">Véronique</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Fosset</p>
-            <p class="choriste-firstname">Hélène</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Hellegouarch</p>
-            <p class="choriste-firstname">Catherine</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Ho</p>
-            <p class="choriste-firstname">Christine</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Lefèvre</p>
-            <p class="choriste-firstname">Béatrice</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Lemaire</p>
-            <p class="choriste-firstname">Corinne</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Michel</p>
-            <p class="choriste-firstname">Valérie</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Penard</p>
-            <p class="choriste-firstname">Joëlle</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Praseuth</p>
-            <p class="choriste-firstname">Danièle</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Pujol</p>
-            <p class="choriste-firstname">Anne-Laure</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Raoult</p>
-            <p class="choriste-firstname">Sylvie</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Raynaud</p>
-            <p class="choriste-firstname">Françoise</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Rode</p>
-            <p class="choriste-firstname">Julie</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Simon</p>
-            <p class="choriste-firstname">Anne-Marie</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Ténier</p>
-            <p class="choriste-firstname">Françoise</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Thin</p>
-            <p class="choriste-firstname">Guillemette</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Tiano</p>
-            <p class="choriste-firstname">Sophie</p>
-        </div>
-
-    </div>
-
-<!-- Tenors -->
-    <h2 class="pupitre-title"  id="tenors">Tenors</h2>
-
-    <div class="choristes-grid">
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Aggeri</p>
-            <p class="choriste-firstname">Franck</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Bayan</p>
-            <p class="choriste-firstname">Nicolas *</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Bayet</p>
-            <p class="choriste-firstname">Michel</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Carbó Meseguer</p>
-            <p class="choriste-firstname">Alex</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Cirodde</p>
-            <p class="choriste-firstname">Dimitri</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Clerc</p>
-            <p class="choriste-firstname">Michel</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Couvidoux</p>
-            <p class="choriste-firstname">Gérard</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Couvidoux</p>
-            <p class="choriste-firstname">Vincent</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">D'Anselme</p>
-            <p class="choriste-firstname">Michel</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Lefèvre</p>
-            <p class="choriste-firstname">Jean-Éric</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Li</p>
-            <p class="choriste-firstname">Antoine</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Louvel</p>
-            <p class="choriste-firstname">Patrick</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Phan</p>
-            <p class="choriste-firstname">James</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Puiroux</p>
-            <p class="choriste-firstname">Evelyne</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Rémond</p>
-            <p class="choriste-firstname">Chantal</p>
-        </div>
-
-    </div>
-
-<!-- Basses -->
-
-    <h2 class="pupitre-title" id = "basses">Basses</h2>
-
-    <div class="choristes-grid">
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Bordes</p>
-            <p class="choriste-firstname">Quentin</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Bourdel</p>
-            <p class="choriste-firstname">Jean</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Clément</p>
-            <p class="choriste-firstname">René</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Decrop</p>
-            <p class="choriste-firstname">Emmanuel</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">De Nailly</p>
-            <p class="choriste-firstname">Gérard</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Foucault</p>
-            <p class="choriste-firstname">Philippe</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Kieffer</p>
-            <p class="choriste-firstname">Michel</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Laguës</p>
-            <p class="choriste-firstname">Michel</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Le Gall</p>
-            <p class="choriste-firstname">Jacques</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Micheau</p>
-            <p class="choriste-firstname">Olivier</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Nakatani</p>
-            <p class="choriste-firstname">Keitaro</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Neu</p>
-            <p class="choriste-firstname">Michel</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Penard</p>
-            <p class="choriste-firstname">Jean-Michel</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Rioual</p>
-            <p class="choriste-firstname">Michel</p>
-        </div>
-
-        <div class="choriste-card">
-            <div class="choriste-photo">Photo</div>
-            <p class="choriste-name">Ter-Minassian</p>
-            <p class="choriste-firstname">Daniel</p>
-        </div>
-
-    </div>
-
+    <div id="choristes-content"></div>
 
 </main>
 
-
-<footer class="site-footer">
-
-    <p>
-        VOCALYS · Chœur du conservatoire · Bourg-la-Reine / Sceaux
-    </p>
-
-    <nav>
-        <a href="index.html">Accueil</a>
-        ·
-        <a href="concerts.html">Concerts</a>
-        ·
-        <a href="espace-choristes.html">Espace choristes</a>
-        ·
-        <a href="contact.html">Contact</a>
-        ·
-        <a href="mentions-legales.html">Mentions légales</a>
-    </nav>
-
-    <p>
-        © 2005–2026 Vocalys
-    </p>
-
-</footer>
-
-
-<script>
-    /* Menu mobile */
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
-
-    if (menuToggle && mainNav) {
-
-        menuToggle.addEventListener('click', function () {
-
-            const expanded =
-                menuToggle.getAttribute('aria-expanded') === 'true';
-
-            menuToggle.setAttribute(
-                'aria-expanded',
-                String(!expanded)
-            );
-
-            mainNav.classList.toggle('open');
-        });
-    }
-</script>
-
 <footer>
- <div class="container footer-inner">
-  <div><strong>VOCALYS</strong><span>Chœur d'adultes · Bourg-la-Reine / Sceaux</span></div>
-  <div class="footer-links">
-    <a href="index.html">Accueil</a>
-    <a href="concerts.html">Concerts</a>
-    <a href="choristes.html">Espace choristes</a>
-    <a href="contact.html">Contact</a>
-    <a href="mentions.html">Mentions légales</a>
-  </div>
-  <div class="copyright">© 2005–2026 Vocalys</div>
- </div>
+    <div class="container footer-inner">
+
+        <div>
+            <strong>VOCALYS</strong>
+            <span>Chœur du conservatoire · Bourg-la-Reine / Sceaux</span>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="concerts.html">Concerts</a>
+            <a href="choristes.html">Espace choristes</a>
+            <a href="contact.html">Contact</a>
+            <a href="mentions-legales.html">Mentions légales</a>
+        </div>
+
+        <div class="copyright">© 2005–2026 Vocalys</div>
+
+    </div>
 </footer>
+
 <script>
-const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');
-toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',open);});
+/* =========================================================
+   LISTE DES CHORISTES
+   Format : [Nom, Prénom, Photo éventuelle]
+   ========================================================= */
+
+
+const pupitres = [
+
+    {
+        id: "sopranos",
+        titre: "Sopranos",
+        choristes: [
+            ["Amon", "Pauline", "_s.gif"],
+            ["Aubertin", "Patricia", "0aubertin.jpg"],
+            ["Benatre", "Brigitte", "0benatre_s.jpg"],
+            ["Blez", "Monique", "0blez.jpg"],
+            ["Charrière", "Élisabeth", "0charriere.jpg"],
+            ["Coskun", "Beyza", "_s.gif"],
+            ["Covès", "Corinne", "0coves.jpg"],
+            ["Dancourt", "Clara-Pauline", "_s.gif"],
+            ["Dupieux", "Anne", "0dupieux.jpg"],
+            ["Egnell", "Henriette", "0egnell.jpg"],
+            ["Eon", "Agnès", "_s.gif"],
+            ["Favier", "Cécile", "0favier.jpg"],
+            ["Fournier", "Estelle", "_s.gif"],
+            ["Fuchs", "Anne", "_s.gif"],
+            ["Govaere", "Claire", "0govaere.jpg"],
+            ["Grobon", "Isabelle", "_s.gif"],
+            ["Martinelli", "Colombine", "0martinelli.jpg"],
+            ["Maruiani", "Agnès", "_s.gif"],
+            ["Papiernik", "Juliette", "0papiernik.jpg"],
+            ["Phan", "Florence", "0phan_f.jpg"],
+            ["Pomian-Berthe", "Mélanie", "0pomian.jpg"],
+            ["Rabaud", "Baptiste", "_s.gif"],
+            ["Reverdy", "Mathilde", "_s.gif"],
+            ["Schoette", "Carole", "_s.gif"],
+            ["Sowa", "Maya", "0sowa.jpg"],
+            ["Starynkévitch", "Corinne", "0starynkevitch.jpg"],
+            ["Trialoup", "Rébecca", "0trialoup.jpg"],
+            ["Vignes", "Sylvie", "0vignes.jpg"],
+            ["Vivicorsi", "Florence", "0vivicorsi.jpg"],
+            ["Volz", "Yaling", "_s.gif"]
+        ]
+    },
+
+    {
+        id: "altos",
+        titre: "Altos",
+        choristes: [
+            ["Aberdam", "Marie-Suzanne", "0aberdam.jpg"],
+            ["Berdah", "Maryse", "_a.gif"],
+            ["Blanc", "Virginie", "0blanc.jpg"],
+            ["Brochard", "Pascale", "_a.gif"],
+            ["Brussier", "Magali", "0brussier.jpg"],
+            ["Elissalt", "Véronique", "_a.gif"],
+            ["Fosset", "Hélène", "_a.gif"],
+            ["Hellegouarch", "Catherine", "0hellegouarch.jpg"],
+            ["Ho", "Christine", "_a.gif"],
+            ["Lefèvre", "Béatrice", "0lefevre_b.jpg"],
+            ["Lemaire", "Corinne", "0lemaire.jpg"],
+            ["Michel", "Valérie", "0michel.jpg"],
+            ["Penard", "Joëlle", "_a.gif"],
+            ["Praseuth", "Danièle", "0praseuth.jpg"],
+            ["Pujol", "Anne-Laure", "0pujol.jpg"],
+            ["Raoult", "Sylvie", "0raoult.jpg"],
+            ["Raynaud", "Françoise", "0raynaud.jpg"],
+            ["Rode", "Julie", "_a.gif"],
+            ["Simon", "Anne-Marie", "0simon_am.jpg"],
+            ["Ténier", "Françoise", "0tenier.jpg"],
+            ["Thin", "Guillemette", "0thin.jpg"],
+            ["Tiano", "Sophie", "0tiano.jpg"]
+        ]
+    },
+
+    {
+        id: "tenors",
+        titre: "Ténors",
+        choristes: [
+            ["Aggeri", "Franck", "_t.gif"],
+            ["Bayan", "Nicolas *", "0bayan.jpg"],
+            ["Bayet", "Michel", "0bayet.jpg"],
+            ["Carbó Meseguer", "Alex", "_t.gif"],
+            ["Cirodde", "Dimitri", "0cirodde.jpg"],
+            ["Clerc", "Michel", "_t.gif"],
+            ["Couvidoux", "Gérard", "0couvidoux.jpg"],
+            ["Couvidoux", "Vincent", "0couvidoux.jpg"],
+            ["D'Anselme", "Michel", "0danselme.jpg"],
+            ["Lefèvre", "Jean-Éric", "0lefevre.jpg"],
+            ["Li", "Antoine", "0li.jpg"],
+            ["Louvel", "Patrick", "0louvel.jpg"],
+            ["Phan", "James", "0phan.jpg"],
+            ["Puiroux", "Evelyne", "0puiroux.jpg"],
+            ["Rémond", "Chantal", "0remond.jpg"]
+        ]
+    },
+
+    {
+        id: "basses",
+        titre: "Basses",
+        choristes: [
+            ["Bordes", "Quentin", "_b.gif"],
+            ["Bourdel", "Jean", "_b.gif"],
+            ["Clément", "René", "0clement.jpg"],
+            ["Decrop", "Emmanuel", "_b.gif"],
+            ["De Nailly", "Gérard", "0denailly.jpg"],
+            ["Foucault", "Philippe", "0foucault.jpg"],
+            ["Kieffer", "Michel", "0kieffer_m.jpg"],
+            ["Laguës", "Michel", "0lagues_m.jpg"],
+            ["Le Gall", "Jacques", "0legall.jpg"],
+            ["Micheau", "Olivier", "0micheau.jpg"],
+            ["Nakatani", "Keitaro", "0nakatani.jpg"],
+            ["Neu", "Michel", "_b.gif"],
+            ["Penard", "Jean-Michel", "_b.gif"],
+            ["Rioual", "Michel", "_b.gif"],
+            ["Ter-Minassian", "Daniel", "_b.gif"]
+        ]
+    }
+
+];
+
+
+/* =========================================================
+   CONSTRUCTION AUTOMATIQUE DE LA PAGE
+   ========================================================= */
+
+const container = document.getElementById("choristes-content");
+
+pupitres.forEach(pupitre => {
+
+    const section = document.createElement("section");
+    section.className = "pupitre-section";
+
+    const titre = document.createElement("h2");
+    titre.className = "pupitre-title";
+    titre.id = pupitre.id;
+    titre.textContent = pupitre.titre;
+
+    const grille = document.createElement("div");
+    grille.className = "choristes-grid";
+
+    pupitre.choristes.forEach(([nom, prenom, photo]) => {
+
+        const carte = document.createElement("article");
+        carte.className = "choriste-card";
+
+        const emplacement = document.createElement("div");
+        emplacement.className = "choriste-photo";
+
+        if (photo) {
+            const img = document.createElement("img");
+            img.src = "trombinoscope/" + photo;
+            img.alt = "Portrait de " + prenom + " " + nom;
+            img.loading = "lazy";
+            img.className = "choriste-photo-img";
+            emplacement.appendChild(img);
+        } else {
+            emplacement.textContent = "Photo";
+        }
+
+        const nomElement = document.createElement("p");
+        nomElement.className = "choriste-name";
+        nomElement.textContent = nom;
+
+        const prenomElement = document.createElement("span");
+        prenomElement.className = "choriste-firstname";
+        prenomElement.textContent = prenom;
+
+        nomElement.appendChild(prenomElement);
+
+        carte.appendChild(emplacement);
+        carte.appendChild(nomElement);
+
+        grille.appendChild(carte);
+    });
+
+    section.appendChild(titre);
+    section.appendChild(grille);
+
+    container.appendChild(section);
+});
+
+
+/* =========================================================
+   MENU MOBILE
+   ========================================================= */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const mainNav = document.querySelector(".main-nav");
+
+if (menuToggle && mainNav) {
+
+    menuToggle.addEventListener("click", () => {
+
+        const ouvert =
+            menuToggle.getAttribute("aria-expanded") === "true";
+
+        menuToggle.setAttribute("aria-expanded", String(!ouvert));
+        menuToggle.setAttribute(
+            "aria-label",
+            ouvert ? "Ouvrir le menu" : "Fermer le menu"
+        );
+
+        mainNav.classList.toggle("open", !ouvert);
+    });
+}
+
+
+/* =========================================================
+   ACCÈS PAR MOT DE PASSE
+   Attention : protection indicative uniquement.
+   ========================================================= */
+
+// À supprimer si la page est rendue publique.
+const motDePasse = prompt("Mot de passe :");
+
+if (motDePasse !== "Vocalys2026") {
+    document.body.innerHTML = "<h1>Accès refusé</h1>";
+}
 </script>
+
 </body>
 </html>
